@@ -5,6 +5,15 @@ boolean doubleX(String str) {
   followed by another "x".
   */
 
+  int firstOccurence = 0;
+  int secondOccurence = 0;
+
+
+
+
+
+
+
 
 
 }
