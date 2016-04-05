@@ -1,19 +1,42 @@
 boolean doubleX(String str) {
 
-  /* Given a string, return true if the first instance
-  of "x" in the string is immediately
-  followed by another "x".
-  */
+	/*
+	Given a string, return true if the first
+	instance of "x" in the string is immediately
+	followed by another "x".
+	*/
 
-  int firstOccurence = 0;
-  int secondOccurence = 0;
+	// Declare some variables to use
+	boolean foundX = true;
+	int firstXLocation = str.indexOf("x");
+	int secondXLocation = 0;
 
+	// Is the string too short or are there no X's at all?
+	if ((str.length() <= 1) || (str.indexOf("x") == -1)) {
+		foundX = false;
+	}
 
+	// Are there ANY double X's in the string?
+	if (str.indexOf("xx") == -1) {
+		foundX = false;
+	}
+	
+	// Is secondXLocation out of bounds?
+	// if not, set secondXLocation
+	if (str.indexOf("x", firstXLocation + 1) > str.length()) {
+		foundX = false;
+	} else {
+		secondXLocation = str.indexOf("x", firstXLocation + 1);
+	}
 
+	// If the difference between firstXLocation and secondXLocation
+	// is equal to 1, then foundX is true
+	if (secondXLocation - firstXLocation == 1) {
+		foundX = true;
+	} else {
+		foundX = false;
+	}
 
-
-
-
-
+	return foundX;
 
 }

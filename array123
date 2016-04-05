@@ -1,18 +1,39 @@
 public boolean array123(int[] nums) {
 
-  boolean isTrue = false;
-  int count = 0;
-  int[] newArray = new int[3];
+	/*
+	Given an array of ints, return true
+	if .. 1, 2, 3, .. appears in the array somewhere.
+	*/
 
-  // if out of range return false
-  if (nums.length <= 2) {
-    isTrue = false;
-  }
+	boolean isTrue = false;
+	int[] newArray = new int[nums.length];
+	int count = 0;
 
-  for (int i = 0; i < nums.length; i++) {
+	if (nums.length <= 2) {
+		isTrue = false;
+	}
 
-  }
+	for (int i = 0; i < nums.length; i++) {
+		for (int j = i + 1; j < nums.length; j++) {
+			for (int k = i + 2; k < nums.length; k++) {
+				newArray[i] = nums[i];
+				newArray[j] = nums[j];
+				newArray[k] = nums[k];
+				if ((newArray[i] == 1) && (newArray[j] == 2) && (newArray[k] == 3)) {
+					count++;
+				}
+			}
+		}
+	}
 
-  return isTrue;
+
+
+
+
+	if (count > 0) {
+		isTrue = true;
+	}
+
+	return isTrue;
 
 }
