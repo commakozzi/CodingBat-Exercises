@@ -7,25 +7,24 @@ public String stringX(String str) {
 	should not be removed.
 	*/
 
-	String newString = "";
-	String nextLetter = "";
 	String firstLetter = "";
 	String lastLetter = "";
+	String nextLetter = "";
+	String newString = "";
 
-	if (str.length() <= 1) newString = str;
+	if (str.length() <= 2) newString = str;
 
-	for (int i = 0; i < str.length() - 1; i = i + 2) {
+	// Set first and last letter to x if x
+	if (str.length() > 2 && str.substring(0, 1).equals("x")) firstLetter = "x";
+	if (str.length() > 2 && str.substring(str.length() - 1, str.length()).equals("x")) lastLetter = "x";
+
+	// Collect all strings not x and assign to nextLetter
+	for (int i = 0; i < str.length(); i++) {
 		if (!str.substring(i, i + 1).equals("x")) {
 			nextLetter = str.substring(i, i + 1);
+			newString = newString + nextLetter;
 		}
-		newString = newString + nextLetter;
 	}
-
-	//str.substring(0, 1).equals("x") ? firstLetter = "x" : firstLetter = "";
-	//str.substring(str.length() - 1, str.length()).equals("x") ? lastLetter = "x" : lastLetter = "";
-
-	if (str.substring(0, str.length()).equals("x")) firstLetter = "x";
-	if (str.substring(str.length() - 1, str.length()).equals("x")) lastLetter = "x";
 
 	return firstLetter + newString + lastLetter;
 
