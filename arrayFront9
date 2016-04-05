@@ -1,0 +1,29 @@
+public boolean arrayFront9(int[] nums) {
+
+	/*
+	Given an array of ints, return true if
+	one of the first 4 elements in the array
+	is a 9. The array length may be less than 4.
+  	*/
+
+  	boolean isNine = false;
+  	int count = 0;
+  	int[] newArray = new int[4];
+
+  	// newArray = Arrays.copyRangeOf(nums, 0, 4);
+
+  	newArray = Arrays.copyOf(nums, 4);
+
+  	for (int j = 0; j < newArray.length; j++) {
+  		if (newArray[j] == 9) {
+  			count++;
+  		}
+  	}
+
+  	if (count >= 1) {
+  		isNine = true;
+  	}
+
+  	return isNine;
+
+}
