@@ -12,21 +12,6 @@ public String stringYak(String str) {
 	stringYak("yak123ya") → "123ya"
 	*/
 
-	String appendedString = "";
-	String finalString = "";
-	int endIndex = 0;
-
-	if (str.length() < 3) finalString = str;
-
-	/*
-	for (int i = 0; i < str.length(); i++) {
-		endIndex = str.indexOf(i + 3);
-		if (endIndex > str.length()) endIndex = str.length();
-		if (str.substring(i, endIndex).equals("yak")) appendedString = "";
-		finalString += appendedString;
-	}
-	*/
-
-	return finalString;
+	return str.replace("yak", "");
 
 }
