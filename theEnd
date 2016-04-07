@@ -11,6 +11,14 @@ public String theEnd(String str, boolean front) {
   theEnd("oh", true) → "o"
   */
 
+  String newString = "";
 
+  if (front = true) {
+    newString = str.substring(0, 1);
+  } else {
+    newString = str.substring(str.length());
+  }
+
+  return newString;
 
 }
