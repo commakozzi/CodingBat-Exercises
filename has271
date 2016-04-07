@@ -17,10 +17,12 @@ public boolean has271(int[] nums) {
   int count = 0;
 
   for (int i = 0; i < nums.length -2; i++) {
-    int firstIndex = i;
-    int secondIndex = i + 1;
-    int thirdIndex = i + 2;
-    if (secondIndex - firstIndex == 5 && firstIndex - thirdIndex <= 2) {
+    int firstIndex = nums[i];
+    int secondIndex = nums[i + 1];
+    int thirdIndex = nums[i + 2];
+    if (secondIndex - firstIndex == 5 && ((Math.abs(firstIndex - 1) == Math.abs(thirdIndex)) ||
+        (Math.abs(firstIndex - 1) == Math.abs(thirdIndex) + 2) || (Math.abs(firstIndex - 1) ==
+          Math.abs(thirdIndex - 2)))) {
       count++;
     }
   }
