@@ -13,12 +13,10 @@ public String theEnd(String str, boolean front) {
 
   String newString = "";
 
-  if (front = true) {
+  if(front) {
     newString = str.substring(0, 1);
   } else {
-    newString = str.substring(str.length());
+    newString = str.substring(str.length() - 1);
   }
-
   return newString;
-
 }
