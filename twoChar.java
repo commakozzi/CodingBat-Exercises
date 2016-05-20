@@ -12,8 +12,15 @@ public String twoChar(String str, int index) {
   */
 
   String newString = "";
+  int endIndex = index + 2;
 
-  
+  if(endIndex > str.length()) {
+    newString = str.substring(0, 2);
+  } else if(index < 1) {
+    newString = str.substring(0, 2);
+  } else {
+    newString = str.substring(index, endIndex);
+  }
 
   return newString;
 
